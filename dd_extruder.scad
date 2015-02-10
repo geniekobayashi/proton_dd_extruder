@@ -1,8 +1,7 @@
 // Vertical mount bowden type
 // Direct Drive extruder for Proton
 // http://etherpod.org/blog/?p=7962
-// 2014 bitfab - Genie Kobayashi
-
+// 2014-2015 bitfab - Genie Kobayashi
 
 $fn = 32;
 
@@ -16,18 +15,17 @@ include <screw_m6.scad>
 //nema_17();
 body();
 lever();
-//translate([-50,-50,0])
-//		cube([80,50,50]);
+//translate([4.5,-25,-40])
+//		cube([20,50,80]);
 //}
-
 
 module M3_nut()
 { union()
 	{
 		//entrance
-		translate([0,-2.7,15]) cube([2*(5.8/sqrt(3)),6,3],center=true);
+		translate([0,-2.7,15]) cube([6.65,6,3],center=true);
 		//nut
-		translate([0,0.3,13.5]) rotate([0,0,0])cylinder(r=5.8/sqrt(3),h=3,$fn=6);
+		translate([0,0.3,13.5]) rotate([0,0,0])cylinder(r=6.65/2,h=3,$fn=6);
 	}
 }
 
@@ -190,7 +188,7 @@ cylinder(h=80,r=2.25/2);
 
 // Tapers
 translate([3.5+1.75/2,-9-offset,8])
-cylinder(h=5,r1=6/2,r2=2.25/2);
+cylinder(h=6,r1=6/2,r2=2.25/2);
 
 translate([3.5+1.75/2,-9-offset,-13])
 cylinder(h=5,r1=2.25/2,r2=3.5/2);
@@ -225,7 +223,7 @@ translate([19.4,0,-34]) rotate ([90,0,0])
 cylinder(h=17.5,r=3.5/2);
 }
 
-// M3 hex nut
+// M3 hex bolt
 		translate([31/2, 15, 31/2])
 		rotate([90,0,0])
 			cylinder(h = 45, r = 3.3/2);
@@ -239,7 +237,7 @@ translate([12.8,-5.5-offset,0]) rotate ([90,0,0])
 cylinder(h=7,r=17.5/2);
 
 // M5 for idler
-translate([12.8,-2-offset,0]) rotate ([90,0,0]) 
+translate([12.8,-1.9-offset,0]) rotate ([90,0,0]) 
 cylinder(h=16,r=(5-0.3)/2);
 
 // Cutout
